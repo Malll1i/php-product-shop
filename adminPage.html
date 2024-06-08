@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание заказа</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        form{
+            margin-top: 200%;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-section h2 {
+            margin-top: 0;
+        }
+
+        .form-section input,
+        .form-section textarea,
+        .form-section select {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        .form-section label {
+            font-weight: bold;
+        }
+
+        .form-section button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 550px;
+        }
+
+        .form-section button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <form action="submit.php" method="POST" enctype="multipart/form-data">
+            <!-- Продукт -->
+            <div class="form-section">
+                <h2>Продукт</h2>
+                <label for="productName">Наименование</label>
+                <input type="text" id="productName" name="productName" required>
+
+                <label for="category">Категория</label>
+                <select id="category" name="category" required>
+                    <option value="vegetables">Овощи</option>
+                    <option value="fruits">Фрукты</option>
+                    <option value="meat">Мясо</option>
+                    <option value="dairy">Молочные продукты</option>
+                </select>
+
+                <label for="price">Цена</label>
+                <input type="number" id="price" name="price" required>
+
+                <label for="quantity">Количество в наличии</label>
+                <input type="number" id="quantity" name="quantity" required>
+
+                <label for="supplier">Производитель/поставщик</label>
+                <input type="text" id="supplier" name="supplier" required>
+
+                <label for="expiryDate">Срок годности/дата производства</label>
+                <input type="date" id="expiryDate" name="expiryDate" required>
+
+                <label for="description">Описание</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+
+                <label for="image">Изображение</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+            </div>
+
+            <!-- Клиент -->
+            <div class="form-section">
+                <h2>Клиент</h2>
+                <label for="clientName">ФИО</label>
+                <input type="text" id="clientName" name="clientName" required>
+
+                <label for="clientPhone">Контактный телефон</label>
+                <input type="tel" id="clientPhone" name="clientPhone" required>
+
+                <label for="clientEmail">Email</label>
+                <input type="email" id="clientEmail" name="clientEmail" required>
+
+                <label for="clientAddress">Адрес</label>
+                <input type="text" id="clientAddress" name="clientAddress" required>
+
+                <label for="purchaseHistory">История покупок</label>
+                <textarea id="purchaseHistory" name="purchaseHistory" rows="4"></textarea>
+            </div>
+
+            <!-- Заказ -->
+            <div class="form-section">
+                <h2>Заказ</h2>
+                <label for="orderDate">Дата заказа</label>
+                <input type="date" id="orderDate" name="orderDate" required>
+
+                <label for="orderClient">Клиент</label>
+                <input type="text" id="orderClient" name="orderClient" required>
+
+                <label for="orderProducts">Перечень продуктов</label>
+                <textarea id="orderProducts" name="orderProducts" rows="4" required></textarea>
+
+                <label for="orderTotal">Сумма заказа</label>
+                <input type="number" id="orderTotal" name="orderTotal" required>
+
+                <label for="orderStatus">Статус заказа</label>
+                <select id="orderStatus" name="orderStatus" required>
+                    <option value="new">Новый</option>
+                    <option value="processing">В обработке</option>
+                    <option value="shipped">Отправлен</option>
+                    <option value="completed">Выполнен</option>
+                </select>
+            </div>
+
+            <!-- Поставщик -->
+            <div class="form-section">
+                <h2>Поставщик</h2>
+                <label for="supplierName">Наименование</label>
+                <input type="text" id="supplierName" name="supplierName" required>
+
+                <label for="supplierPhone">Контактный телефон</label>
+                <input type="tel" id="supplierPhone" name="supplierPhone" required>
+
+                <label for="supplierEmail">Email</label>
+                <input type="email" id="supplierEmail" name="supplierEmail" required>
+
+                <label for="supplierAddress">Адрес</label>
+                <input type="text" id="supplierAddress" name="supplierAddress" required>
+            </div>
+
+            <div class="form-section">
+                <button type="submit">Отправить</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
